@@ -1,5 +1,9 @@
 # Firebase Todo App (Expo Router)
 
+
+https://github.com/user-attachments/assets/89566f8b-e2e5-42fc-95cb-5ba8e506da48
+
+
 A React Native **Todo app** built with **Expo Router** and powered by **Firebase**:
 - **Authentication** (sign up, sign in, sign out)
 - **Firestore** for storing your todo data
