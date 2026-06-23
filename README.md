@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# Firebase Todo App (Expo Router)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native **Todo app** built with **Expo Router** and powered by **Firebase**:
+- **Authentication** (sign up, sign in, sign out)
+- **Firestore** for storing your todo data
 
-## Get started
+---
 
-1. Install dependencies
+## Tech Stack
 
-   ```bash
-   npm install
-   ```
+- **Expo** (React Native)
+- **expo-router** (file-based routing)
+- **Firebase**
+  - Auth (`firebase/auth`)
+  - Firestore (`firebase/firestore`)
+- **JavaScript/TypeScript**
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Requirements
 
-In the output, you'll find options to open the app in a
+- Node.js (LTS recommended)
+- npm
+- An Android environment for emulator/device (optional if using Expo Go)
+- A Firebase project with:
+  - Email/Password authentication enabled
+  - Firestore database created
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Setup & Installation
 
-## Get a fresh project
-
-When you're ready, run:
+### 1) Install dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2) Configure Firebase
 
-## Learn more
+Update `FirebaseConfig.ts` with your Firebase project values (e.g. `apiKey`, `authDomain`, `projectId`, etc.).
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3) Run the app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Then open:
+- **Expo Go** (recommended for quick testing), or
+- Android/iOS emulator/simulator.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## How Authentication Works
+
+- Users can **Sign Up** and **Sign In** with email/password.
+- After authentication, the app navigates to the main tab layout.
+- **Sign Out** logs the user out and returns to the login screen.
+
+---
+
+## How Todos Work
+
+- Todos are created/updated in **Firestore**.
+- Each authenticated user can store and fetch their todo data from Firestore.
+
+---
+
+## Project Structure (high level)
+
+- `app/` - Expo Router screens
+- `FirebaseConfig.ts` - Firebase initialization + Auth/Firestore exports
+- `app/(tabs)/` - Tab-based navigation screens
+
+---
+
+## Scripts
+
+- Start the app:
+  - `npm start`
+- Run on Android:
+  - `npm run android`
+- Run on iOS:
+  - `npm run ios`
+- Reset project (if using the Expo starter reset script):
+  - `npm run reset-project`
+
+---
+
+## Notes
+
+If you face any port conflict warnings while starting Expo, choose the suggested alternate port shown in the terminal.
+
